@@ -5,3 +5,6 @@ test
 update artifact
 
 change config
+
+change mode
+
