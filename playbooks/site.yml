@@ -5,7 +5,7 @@
 
  - hosts: nginx
  - name: nginx assignment
-  ansible.builtin.import_playbook: ../static-assignments/uat-webservers.yml
+   ansible.builtin.import_playbook: ../static-assignments/uat-webservers.yml
 
 # - hosts: artifactory
 # - name: artifactory assignment
