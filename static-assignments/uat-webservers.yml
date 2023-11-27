@@ -4,6 +4,6 @@
 #     - webserver
 
      ---
-- hosts: nginx
-  roles:
+-  hosts: nginx
+   roles:
      - webserver
