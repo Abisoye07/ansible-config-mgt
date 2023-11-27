@@ -3,7 +3,6 @@
 #  roles:
 #     - webserver
 
-     ---
--  hosts: nginx
-   roles:
-     - webserver
+- hosts: nginx
+  roles:
+     - nginx
