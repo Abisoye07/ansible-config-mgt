@@ -40,7 +40,7 @@
       }
     }
 
-    stage('Clean Up') {
+    stage('Clean Up workspace after build') {
       steps {
          cleanWs(cleanWhenAborted: true, cleanWhenNotBuilt: true, cleanWhenUnstable: true, cleanWhenFailure: true)
       }
