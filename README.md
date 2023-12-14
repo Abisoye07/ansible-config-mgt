@@ -6,5 +6,5 @@ update artifact
 
 change config
 
-change mode
+
 
