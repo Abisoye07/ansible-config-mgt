@@ -7,6 +7,6 @@
 #  roles:
 #     - nginx
 
-  hosts: artifactory
-  roles:
-     - artifactory
+# hosts: artifactory
+# roles:
+#    - artifactory
