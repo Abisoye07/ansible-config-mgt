@@ -1,34 +1,34 @@
-; [nfs]
-; 172.31.1.235 ansible_ssh_user='ec2-user'
+# [nfs]
+# 172.31.1.235 ansible_ssh_user='ec2-user'
 
-; [webservers]
-; 172.31.47.70 ansible_ssh_user='ec2-user'
-; 172.31.46.89 ansible_ssh_user='ec2-user'
+# [webservers]
+# 172.31.47.70 ansible_ssh_user='ec2-user'
+# 172.31.46.89 ansible_ssh_user='ec2-user'
 
 [db]
 172.31.35.50 ansible_ssh_user='ec2-user'
  
 
-; [lb]
-; 172.31.38.242 ansible_ssh_user='ubuntu'
+# [lb]
+# 172.31.38.242 ansible_ssh_user='ubuntu'
 
 [nginx]
 172.31.3.145 ansible_ssh_user='ec2-user'
 
-; [tooling]
-; <Tooling-Web-Server-Private-IP-Address>
+# [tooling]
+# <Tooling-Web-Server-Private-IP-Address>
 
-; [todo]
-; <Todo-Web-Server-Private-IP-Address>
+# [todo]
+# <Todo-Web-Server-Private-IP-Address>
 
-; [nginx]
-; <Nginx-Private-IP-Address>
+# [nginx]
+# <Nginx-Private-IP-Address>
 
-; [db:vars]
-; ansible_user=ec2-user
-; ansible_python_interpreter=/usr/bin/python
+# [db:vars]
+# ansible_user=ec2-user
+# ansible_python_interpreter=/usr/bin/python
 
-; [db]
-; <DB-Server-Private-IP-Address>
+# [db]
+# <DB-Server-Private-IP-Address>
 
 
