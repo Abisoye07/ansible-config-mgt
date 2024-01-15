@@ -5,8 +5,8 @@
 # 172.31.47.70 ansible_ssh_user='ec2-user'
 # 172.31.46.89 ansible_ssh_user='ec2-user'
 
-[db]
-172.31.35.50 ansible_ssh_user='ec2-user'
+# [db]
+# 172.31.35.50 ansible_ssh_user='ec2-user'
  
 
 # [lb]
@@ -31,4 +31,5 @@
 # [db]
 # <DB-Server-Private-IP-Address>
 
-
+[artifactory]
+172.31.5.106 ansible_ssh_user='ec2-user'
