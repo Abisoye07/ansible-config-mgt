@@ -1,34 +1,28 @@
 ---
 # tasks file for artifactory
-
-- name: install java 11
+- name: Install Java 11
+  include_role:
+    name: geerlingguy.java
+    tasks_from: java
+  vars:
+    java_packages:
+      - java-11-openjdk
+      - java-11-openjdk-devel
+- name: Add Artifactory Yum Repository
+  yum_repository:
+    name: jfrog-artifactory
+    description: JFrog Artifactory RPM Repository
+    baseurl: https://releases.jfrog.io/artifactory/artifactory-rpms
+    gpgcheck: yes
+    gpgkey: https://releases.jfrog.io/artifactory/api/gpg/key/public
+    enabled: yes
+- name: Update Yum Cache and Install Artifactory
   yum:
-    name: java-11-openjdk-devel
+    name:
+      - jfrog-artifactory-oss
     state: present
-
-- name: Download/fetch repo from the url
-  get_url:
-    url:  https://releases.jfrog.io/artifactory/artifactory-rpms/artifactory-rpms.repo 
-    dest: /home/ec2-user/jfrog-artifactory-rpms.repo
-    mode: '0755'
- 
-- name: Copy the downloaded file to the etc repo
-  copy:
-    src: /home/ec2-user/jfrog-artifactory-rpms.repo
-    dest: /etc/yum.repos.d/jfrog-artifactory-rpms.repo
-    remote_src: yes
-    follow: yes
-
-- name: update cache
-  yum:
     update_cache: yes
-
-- name: install artifactory
-  yum:
-    name: jfrog-artifactory-oss
-    state: present
-
-- name: start and enable artifactory
+- name: Start and Enable Artifactory
   service:
     name: artifactory
     state: started
