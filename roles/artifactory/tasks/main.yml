@@ -1,13 +1,9 @@
----
 # tasks file for artifactory
-- name: Install Java 11
-  include_role:
-    name: geerlingguy.java
-    tasks_from: java
-  vars:
-    java_packages:
-      - java-11-openjdk
-      - java-11-openjdk-devel
+---
+- name: install java 11
+  yum:
+    name: java-11-openjdk-devel
+    state: present
 - name: Add Artifactory Yum Repository
   yum_repository:
     name: jfrog-artifactory
@@ -27,3 +23,10 @@
     name: artifactory
     state: started
     enabled: yes
+
+
+
+
+
+
+
